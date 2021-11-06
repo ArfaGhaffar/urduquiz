@@ -3,15 +3,19 @@ package com.example.quizapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class quiz extends AppCompatActivity {
 
-    TextView textView1,textView2;
+    TextView questionTV,questionNumber;
     Button btn,btn2,btn3,btn4;
     Random random;
     ArrayList<quizmodel> quizArray;
@@ -22,8 +26,8 @@ public class quiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        textView1 = findViewById(R.id.textView);
-        textView2 = findViewById(R.id.textView2);
+        questionNumber = findViewById(R.id.textView);
+        questionTV = findViewById(R.id.textView2);
         btn = findViewById(R.id.button);
         btn2 = findViewById(R.id.button2);
         btn3 = findViewById(R.id.button3);
@@ -32,12 +36,108 @@ public class quiz extends AppCompatActivity {
         quizArray = new ArrayList<>();
         getQuizQuestion(quizArray);
         currentPos= random.nextInt(quizArray.size());
+        setDataToViews(currentPos);
+
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (quizArray.get(currentPos).getAnswer().trim().toLowerCase().equals(btn.getText().toString().trim().toLowerCase())) {
+                    currentScore++;
+                }
+              questionAttempted++;
+                currentPos=random.nextInt(quizArray.size());
+                setDataToViews(currentPos);
+            }
+
+        });
+
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (quizArray.get(currentPos).getAnswer().trim().toLowerCase().equals(btn2.getText().toString().trim().toLowerCase())) {
+                    currentScore++;
+                }
+                questionAttempted++;
+                currentPos=random.nextInt(quizArray.size());
+                setDataToViews(currentPos);
+            }
+
+        });
+
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (quizArray.get(currentPos).getAnswer().trim().toLowerCase().equals(btn3.getText().toString().trim().toLowerCase())) {
+                    currentScore++;
+                }
+                questionAttempted++;
+                currentPos=random.nextInt(quizArray.size());
+                setDataToViews(currentPos);
+            }
+
+        });
+
+
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (quizArray.get(currentPos).getAnswer().trim().toLowerCase().equals(btn4.getText().toString().trim().toLowerCase())) {
+                    currentScore++;
+                }
+                questionAttempted++;
+                currentPos=random.nextInt(quizArray.size());
+                setDataToViews(currentPos);
+            }
+
+        });
+
+
+    }
+
+    private void showSheet(){
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(quiz.this);
+        View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.scores,findViewById(R.id.scores));
+         TextView score=bottomSheetView.findViewById(R.id.TVscore);
+        TextView restart=bottomSheetView.findViewById(R.id.reStart);
+         score.setText("Your score is : "+currentScore+ "/10");
+         restart.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 currentPos=random.nextInt(quizArray.size());
+                 setDataToViews(currentPos);
+                 questionAttempted=1;
+                 currentScore=0;
+                 bottomSheetDialog.dismiss();
+             }
+         });
+
+
+         bottomSheetDialog.setCancelable(false);
+         bottomSheetDialog.setContentView(bottomSheetView);
+         bottomSheetDialog.show();
+    }
+
+    private void setDataToViews(int currentPos) {
+        questionNumber.setText("Questions attempted :"+questionAttempted+"/10");
+        if(questionAttempted==10){
+           showSheet();
+        }else {
+            questionTV.setText(quizArray.get(currentPos).getQuestion());
+            btn.setText(quizArray.get(currentPos).getOption1());
+            btn2.setText(quizArray.get(currentPos).getOption2());
+            btn3.setText(quizArray.get(currentPos).getOption3());
+            btn4.setText(quizArray.get(currentPos).getOption4());
+        }
+
     }
 
     private void getQuizQuestion(ArrayList<quizmodel> quizArray) {
-        quizArray.add(new quizmodel("What is the color of apple","Red","blue","yellow","orange","Red"));
-        quizArray.add(new quizmodel("What is the color of orange","Orange","blue","yellow","orange","Orange"));
-        quizArray.add(new quizmodel("What is the color of banana","Yellow","blue","yellow","orange","Yellow"));
-        quizArray.add(new quizmodel("What is the color of leaf","Green","blue","yellow","orange","Green"));
+        quizArray.add(new quizmodel("How many Makhārij (مخارج Emission) points are require to correctly read Quran???","17","19","21","18","17"));
+        quizArray.add(new quizmodel("How many diacritics are present in the word رَحْمٰن???","1","2","3","4","1"));
+        quizArray.add(new quizmodel("How many alphabets are in Arabic???","20","29","25","27","25"));
+        quizArray.add(new quizmodel("What is the color of leaf??","Green","blue","yellow","orange","Green"));
     }
 }
