@@ -44,4 +44,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 /*Typeface typeface = Typeface.createFromAsset(textView.getText().getAssets(),"src/main/Jameel.ttf");
-        this.textView.setTypeface(typeface);*/
+        this.textView.setTypeface(typeface);
+        https://github.com/ArfaGhaffar/urduquiz.git */
