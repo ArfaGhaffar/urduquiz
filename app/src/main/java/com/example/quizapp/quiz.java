@@ -136,8 +136,14 @@ public class quiz extends AppCompatActivity {
 
     private void getQuizQuestion(ArrayList<quizmodel> quizArray) {
         quizArray.add(new quizmodel("How many Makhārij (مخارج Emission) points are require to correctly read Quran???","17","19","21","18","17"));
-        quizArray.add(new quizmodel("How many diacritics are present in the word رَحْمٰن???","1","2","3","4","1"));
-        quizArray.add(new quizmodel("How many alphabets are in Arabic???","20","29","25","27","25"));
-        quizArray.add(new quizmodel("What is the color of leaf??","Green","blue","yellow","orange","Green"));
+        quizArray.add(new quizmodel("How many diacritics are present in the word رَحْمٰن???","1","2","3","4","3"));
+        quizArray.add(new quizmodel("How many alphabets are in Arabic???","20","29","25","28","29"));
+        quizArray.add(new quizmodel("Which is a small diagonal line placed above a letter???","كَسْرَة","فَتْحَة","ضَمَّة","شَدَّة"," فَتْحَة"));
+        quizArray.add(new quizmodel("What is written as short vertical stroke on top of a consonant???","ـُ","ــٰ"," ـٓ","/","ــٰ"));
+        quizArray.add(new quizmodel("Which letters when pronounced produce a ‘whistling’ sound???","ص","ب","ط","ج","ص"));
+        quizArray.add(new quizmodel("Which of these letters originate from throat???","س","ث","ص","غ","غ"));
+        quizArray.add(new quizmodel("‘Soft letters‘ which are pronounced softly???","ظ","ث","ص","غ","ظ"));
+        quizArray.add(new quizmodel("“Heavy letters” which are pronounced with a heavy accent:???","ق","غ","ظ","All","All"));
+        quizArray.add(new quizmodel("Mouth empty space while speaking words like???"," باَ","بوُ","بىِ","All","All"));
     }
 }
