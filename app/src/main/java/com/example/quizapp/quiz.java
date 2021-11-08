@@ -1,5 +1,6 @@
 package com.example.quizapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -145,5 +146,19 @@ public class quiz extends AppCompatActivity {
         quizArray.add(new quizmodel("‘Soft letters‘ which are pronounced softly???","ظ","ث","ص","غ","ظ"));
         quizArray.add(new quizmodel("“Heavy letters” which are pronounced with a heavy accent:???","ق","غ","ظ","All","All"));
         quizArray.add(new quizmodel("Mouth empty space while speaking words like???"," باَ","بوُ","بىِ","All","All"));
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putString("text",questionNumber.getText().toString());
+        outState.putString("text2",questionTV.getText().toString());
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        questionNumber.setText(savedInstanceState.getString("text"));
+        questionTV.setText(savedInstanceState.getString("text2"));
+        super.onRestoreInstanceState(savedInstanceState);
     }
 }
