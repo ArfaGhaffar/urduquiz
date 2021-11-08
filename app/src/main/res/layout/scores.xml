@@ -26,7 +26,7 @@
         android:id="@+id/reStart"
         android:layout_width="334dp"
         android:layout_height="74dp"
-        android:text="Restart Quiz"
+        android:text="Start Again"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.415"

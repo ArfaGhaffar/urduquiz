@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-   Button btn ;
+   Button btn,btn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         btn = findViewById(R.id.button1);
+        btn2 = findViewById(R.id.btn2);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,6 +28,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openActivity2();
+                }
+            });
+
+    }
+
+    private void openActivity2() {
+        Intent intent = new Intent(this,practice.class);
+        startActivity(intent);
     }
 
     private void openActivity1() {
