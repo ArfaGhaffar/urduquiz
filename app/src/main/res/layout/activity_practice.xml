@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/design_default_color_secondary_variant"
+    android:background="@drawable/islamic"
     tools:context=".quiz">
 
 
@@ -54,6 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="No of questions"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.391"
@@ -66,6 +67,7 @@
         android:layout_height="135dp"
         android:layout_marginTop="36dp"
         android:text="Question"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.525"
@@ -89,8 +91,9 @@
         android:id="@+id/answer"
         android:layout_width="226dp"
         android:layout_height="65dp"
-        android:background="@android:color/holo_blue_light"
+
         android:text="    ANSWER"
+        android:textColor="@color/white"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

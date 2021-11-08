@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/scores"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/quote">
 
 
     <TextView
@@ -13,7 +14,9 @@
         android:layout_height="103dp"
         android:layout_weight="1"
 
-        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +29,9 @@
         android:id="@+id/reStart"
         android:layout_width="334dp"
         android:layout_height="74dp"
+        android:backgroundTint="@color/black"
         android:text="Start Again"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.415"
