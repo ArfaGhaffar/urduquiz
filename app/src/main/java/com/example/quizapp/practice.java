@@ -49,10 +49,12 @@ public class practice extends AppCompatActivity {
                 }
                 else{
                    answer.setText("    WRONG");
+
                 }
                 questionAttempted++;
                 currentPos=random.nextInt(quizArray.size());
                 setDataToViews(currentPos);
+
             }
 
         });
@@ -100,6 +102,7 @@ public class practice extends AppCompatActivity {
                 }
                 else{
                     answer.setText("    WRONG");
+
                 }
                 questionAttempted++;
                 currentPos=random.nextInt(quizArray.size());
@@ -158,6 +161,14 @@ public class practice extends AppCompatActivity {
         quizArray.add(new quizmodel("‘Soft letters‘ which are pronounced softly???","ظ","ث","ص","غ","ظ"));
         quizArray.add(new quizmodel("“Heavy letters” which are pronounced with a heavy accent:???","ق","غ","ظ","All","All"));
         quizArray.add(new quizmodel("Mouth empty space while speaking words like???"," باَ","بوُ","بىِ","All","All"));
+        quizArray.add(new quizmodel("Base of Tongue which is near Uvula touching the mouth roof???","ق","غ","ظ","All","ق"));
+        quizArray.add(new quizmodel("Portion of Tongue near its base touching the roof of mouth???","ق","غ","ظ","ك","ك"));
+        quizArray.add(new quizmodel("One side of the tongue touching the molar teeth???","ق","غ","ظ","ض","ض"));
+        quizArray.add(new quizmodel("While pronouncing the ending sound of, bring the vibration to the nose???","م","غ","ظ","ض","م"));
+        quizArray.add(new quizmodel("Rounding both lips and not closing the mouth???","ق","غ","ظ","و","و"));
+        quizArray.add(new quizmodel("Outer part of both lips touch each other ???","ق","م","ظ","ب","م"));
+        quizArray.add(new quizmodel("Inner part of both lips touch each other???","ق","غ","ظ","ب","ب"));
+        quizArray.add(new quizmodel("Tip of the two upper jaw teeth touches the inner part of the lower lip???","ق","ف","ظ","All","ف"));
     }
 
     @Override
