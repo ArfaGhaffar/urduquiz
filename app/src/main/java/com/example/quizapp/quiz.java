@@ -111,8 +111,6 @@ public class quiz extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
-                intent.setPackage("com.whatsapp");
-
 
                 intent.putExtra(Intent.EXTRA_TEXT, "My name is Arfa."+"\n"+"My Quiz Score is: "+currentScore+"/10");
                 startActivity(intent);

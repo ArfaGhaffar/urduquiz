@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizApp">
         <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".shareIt"
             android:exported="true" />
         <activity
@@ -19,7 +22,7 @@
             android:name=".quiz"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
