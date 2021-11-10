@@ -1,5 +1,6 @@
 package com.example.quizapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,10 +8,12 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-   Button btn,btn2;
+
+    Button btn,btn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,16 +27,16 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            openActivity1();
+                openActivity1();
             }
         });
 
-            btn2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    openActivity2();
-                }
-            });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity2();
+            }
+        });
 
     }
 
@@ -47,15 +50,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
 }
 
 
-
-
-
-
-
-/*Typeface typeface = Typeface.createFromAsset(textView.getText().getAssets(),"src/main/Jameel.ttf");
-        this.textView.setTypeface(typeface);
-        https://github.com/ArfaGhaffar/urduquiz.git */

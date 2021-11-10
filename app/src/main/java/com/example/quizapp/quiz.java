@@ -3,6 +3,7 @@ package com.example.quizapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -100,10 +101,25 @@ public class quiz extends AppCompatActivity {
 
     private void showSheet(){
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(quiz.this);
-        View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.scores2,findViewById(R.id.scores));
-         TextView score=bottomSheetView.findViewById(R.id.TVscore);
-        TextView restart=bottomSheetView.findViewById(R.id.reStart);
+        View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.activity_share_it,findViewById(R.id.quizscore));
+         TextView score=bottomSheetView.findViewById(R.id.quizscore);
+        Button restart=bottomSheetView.findViewById(R.id.reStart);
+        Button btn8=bottomSheetView.findViewById(R.id.btn7);
          score.setText("  Your score is : "+currentScore+ "/10");
+        btn8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.setPackage("com.whatsapp");
+
+
+                intent.putExtra(Intent.EXTRA_TEXT, "My name is Arfa."+"\n"+"My Quiz Score is: "+currentScore+"/10");
+                startActivity(intent);
+
+
+            }
+        });
          restart.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
