@@ -1,6 +1,7 @@
 package com.example.quizapp;
 
         import androidx.annotation.NonNull;
+        import androidx.appcompat.app.ActionBar;
         import androidx.appcompat.app.AppCompatActivity;
 
         import android.os.Bundle;
@@ -39,6 +40,14 @@ public class practice extends AppCompatActivity {
         getQuizQuestion(quizArray);
         currentPos= random.nextInt(quizArray.size());
         setDataToViews(currentPos);
+        //actionbar
+        ActionBar actionBar = getSupportActionBar();
+        //set actionbar title(Optional)
+        actionBar.setTitle("Main page");
+        //set back button
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
+
 
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -183,5 +192,12 @@ public class practice extends AppCompatActivity {
         questionNumber.setText(savedInstanceState.getString("text"));
         questionTV.setText(savedInstanceState.getString("text2"));
         super.onRestoreInstanceState(savedInstanceState);
+    }
+
+    //handle onBack pressed(go previous activity)
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }
